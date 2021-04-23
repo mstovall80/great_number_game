@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <!-- so i need to display a form for the user to play the game-->
+    <!-- I need to have the random.randint create a number between 1-100 and store it. -->
+    <!-- Now i need to create route that say to low, to high, and correct -->
+    <!-- then there need to be a button that lets the user reset the the game -->
+    <div class="container d-flexcolumn justify-content-center">
+        
+        <form action="/guess" method="post">
+            {%csrf_token%}
+            <h1>WELCOME TO THE GREAT NUMBER GAME!!!!</h1>
+            <p>I am thinking of a number between 1 to 10</p>
+            <p>Take a guess!</p>
+            {{request.session.guess}}
+            <br>
+            <input type="number" name="number">
+            <button class="btn btn-primary" type='submit'>Button</button>
+        </form>
+        <a href="/reset">reset</a>
+    </div>
+    
+
+
+</body>
+</html> 
